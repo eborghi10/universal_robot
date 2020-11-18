@@ -1,3 +1,9 @@
 <launch>
 
+  <!-- Set the file describing which sensor(s) to use to build the octomap  -->
+  <arg name="moveit_octomap_sensor_params_file" default="$(find ur5_e_moveit_config)/config/sensors_kinect.yaml" />
+
+  <!-- sensors used to update the map -->
+  <rosparam command="load" file="$(arg moveit_octomap_sensor_params_file)" />
+
 </launch>
